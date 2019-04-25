@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Posts from './Components/Posts';
+import Postform from './Components/Postform';
+import NavBar from './Components/NavBar';
+import BackToTop from 'react-back-to-top-button';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <NavBar />
+        <div id="form" className="container mb-5">
+          <Postform />
+        </div>
+        <div id="posts" className="container">
+          {' '}
+          <Posts />
+        </div>
+
+        <BackToTop showAt={100} speed={1000} easing="easeInOutQuint">
+          <i class="fas fa-chevron-circle-up" />
+        </BackToTop>
       </div>
     );
   }
